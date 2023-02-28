@@ -1,10 +1,11 @@
 import ExpenseItem from "./ExpenseItem";
-import ExpensesFilter from "../expenses_filter/ExpensesFilter";
+import ExpensesFilter from "./filter/ExpensesFilter";
 import "./ExpenseList.css";
 
 import Card from "../ui/Card";
 
 import { useState } from "react";
+import ExpensesChart from "./chart/ExpensesChart";
 
 export default function ExpenseList(expenses) {
   const currentYear = new Date().getFullYear().toString();
@@ -37,6 +38,7 @@ export default function ExpenseList(expenses) {
 
   return (
     <Card className="expense-list">
+      <ExpensesChart expenses={expensesFiltered} />
       <ExpensesFilter
         startValue={filterYear}
         onFilterUpdated={updateFilterYear}

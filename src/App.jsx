@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ExpenseList from "./components/expenses/ExpenseList";
-import NewExpense from "./components/expense_form/NewExpense";
+import NewExpense from "./components/expenses/form/NewExpense";
 
 import "./App.css";
 
@@ -16,7 +16,7 @@ export default function App() {
       const expense = {
         id: newId,
         title: userData.title,
-        amount: userData.amount,
+        amount: +userData.amount,
         date: userData.date,
       };
 
